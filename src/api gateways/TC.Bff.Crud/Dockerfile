@@ -7,10 +7,12 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["src/api gateways/TC.Bff.Crud/TC.Bff.Crud.csproj", "src/api gateways/TC.Bff.Crud/"]
-RUN dotnet restore "src/api gateways/TC.Bff.Crud/TC.Bff.Crud.csproj"
+COPY ["./api gateways/TC.Bff.Crud/TC.Bff.Crud.csproj", "api gateways/TC.Bff.Crud/"]
+COPY ["./building blocks/TC.Core/TC.Core.csproj", "building blocks/TC.Core/"]
+COPY ["./building blocks/TC.WebAPI.Core/TC.WebAPI.Core.csproj", "building blocks/TC.WebAPI.Core/"]
+RUN dotnet restore "api gateways/TC.Bff.Crud/TC.Bff.Crud.csproj"
 COPY . .
-WORKDIR "/src/src/api gateways/TC.Bff.Crud"
+WORKDIR "api gateways/TC.Bff.Crud"
 RUN dotnet build "TC.Bff.Crud.csproj" -c Release -o /app/build
 
 FROM build AS publish

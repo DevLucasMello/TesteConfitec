@@ -21,7 +21,7 @@ namespace TC.Usuarios.Infra.Data.Repository
 
         public async Task<PagedResult<Usuario>> ObterTodos(int pageSize, int pageIndex, string query)
         {
-            var sql = @$"SELECT u.Id,c.Email, u.DataNascimento, u.Escolaridade, u.PrimeiroNome, u.UltimoNome
+            var sql = @$"SELECT u.Id,u.Email, u.DataNascimento, u.Escolaridade, u.PrimeiroNome, u.UltimoNome
                       FROM Usuario u
                       WHERE (@Nome IS NULL OR PrimeiroNome LIKE '%' + @Nome + '%') 
                       ORDER BY [PrimeiroNome] 

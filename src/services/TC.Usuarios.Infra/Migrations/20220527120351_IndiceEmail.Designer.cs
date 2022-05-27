@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TC.Usuarios.Infra.Data;
 
 namespace TC.Usuarios.Infra.Migrations
 {
     [DbContext(typeof(UsuariosContext))]
-    partial class UsuariosContextModelSnapshot : ModelSnapshot
+    [Migration("20220527120351_IndiceEmail")]
+    partial class IndiceEmail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

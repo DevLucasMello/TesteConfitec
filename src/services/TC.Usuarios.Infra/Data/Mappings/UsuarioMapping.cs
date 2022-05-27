@@ -8,9 +8,7 @@ namespace TC.Usuarios.Infra.Data.Mappings
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.HasKey(c => c.Id);
-
-            builder.Property(p => p.Id).ValueGeneratedOnAdd();
+            builder.HasKey(c => c.Id);            
 
             builder.OwnsOne(c => c.Nome, n =>
             {
@@ -28,7 +26,7 @@ namespace TC.Usuarios.Infra.Data.Mappings
             builder.Property(c => c.Email)
                 .IsRequired()
                 .HasColumnName("Email")
-                .HasColumnType("varchar(100)");
+                .HasColumnType("varchar(100)");            
 
             builder.Property(c => c.DataNascimento)
                 .IsRequired()
@@ -39,6 +37,10 @@ namespace TC.Usuarios.Infra.Data.Mappings
                 .IsRequired()
                 .HasColumnName("Escolaridade")
                 .HasColumnType("int");
+
+            builder.Property(p => p.Id).ValueGeneratedOnAdd();
+
+            builder.HasIndex(p => p.Email, name: "IX_Usuario_UsuarioEmail").IsUnique();
 
             builder.ToTable("Usuario");
         }

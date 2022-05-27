@@ -9,8 +9,8 @@ namespace TC.Usuarios.Domain
         Task<PagedResult<Usuario>> ObterTodos(int pageSize, int pageIndex, string query);
         Task<Usuario> ObterPorId(int id);
         Task<Usuario> ObterPorEmail(string email);
-        void Adicionar(Usuario condutor);
-        void Atualizar(Usuario condutor);
-        void Excluir(Usuario condutor);
+        void Adicionar(Usuario usuario);
+        void Atualizar(Usuario usuario);
+        void Excluir(Usuario usuario);
     }
 }

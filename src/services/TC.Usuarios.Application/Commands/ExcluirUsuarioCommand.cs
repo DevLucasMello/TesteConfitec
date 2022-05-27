@@ -2,7 +2,7 @@
 using TC.Usuarios.Application.Messages;
 using TC.Core.Messages;
 
-namespace TP.Condutores.Application.Commands
+namespace TC.Usuarios.Application.Commands
 {
     public class ExcluirUsuarioCommand : Command
     {
