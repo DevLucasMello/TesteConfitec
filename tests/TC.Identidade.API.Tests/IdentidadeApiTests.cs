@@ -24,7 +24,7 @@ namespace TC.Identidade.API.Tests
             // Arrange
             var usuario = new UsuarioRegistro
             {
-                Email = "teste2@teste.com.br",
+                Email = "teste@teste.com.br",
                 Senha = "Teste@123",
                 SenhaConfirmacao = "Teste@123"
             };
