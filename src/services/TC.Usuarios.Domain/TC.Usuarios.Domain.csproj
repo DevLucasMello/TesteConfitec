@@ -4,4 +4,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\building blocks\TC.Core\TC.Core.csproj" />
+  </ItemGroup>
+
 </Project>

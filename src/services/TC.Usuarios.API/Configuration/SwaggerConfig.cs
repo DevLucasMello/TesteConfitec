@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using System;
 
-namespace TC.Identidade.API.Configuration
+namespace TC.Usuarios.API.Configuration
 {
     public static class SwaggerConfig
     {
@@ -14,7 +14,7 @@ namespace TC.Identidade.API.Configuration
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "Teste Confitec",
-                    Description = "Esta API faz a autenticação do usuário no sistema.",
+                    Description = "Esta API faz o controle do usuário no sistema.",
                     Contact = new OpenApiContact() { Name = "Lucas Santos", Email = "lucas.sports@hotmail.com" },
                     License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
                 });

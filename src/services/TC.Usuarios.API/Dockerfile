@@ -7,10 +7,15 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["src/services/TC.Usuarios.API/TC.Usuarios.API.csproj", "src/services/TC.Usuarios.API/"]
-RUN dotnet restore "src/services/TC.Usuarios.API/TC.Usuarios.API.csproj"
+COPY ["./services/TC.Usuarios.API/TC.Usuarios.API.csproj", "services/TC.Usuarios.API/"]
+COPY ["./building blocks/TC.Core/TC.Core.csproj", "building blocks/TC.Core/"]
+COPY ["./building blocks/TC.WebAPI.Core/TC.WebAPI.Core.csproj", "building blocks/TC.WebAPI.Core/"]
+COPY ["./services/TC.Usuarios.Application/TC.Usuarios.Application.csproj", "services/TC.Usuarios.Application/"]
+COPY ["./services/TC.Usuarios.Domain/TC.Usuarios.Domain.csproj", "services/TC.Usuarios.Domain/"]
+COPY ["./services/TC.Usuarios.Infra/TC.Usuarios.Infra.csproj", "services/TC.Usuarios.Infra/"]
+RUN dotnet restore "services/TC.Usuarios.API/TC.Usuarios.API.csproj"
 COPY . .
-WORKDIR "/src/src/services/TC.Usuarios.API"
+WORKDIR "services/TC.Usuarios.API"
 RUN dotnet build "TC.Usuarios.API.csproj" -c Release -o /app/build
 
 FROM build AS publish

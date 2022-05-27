@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using TC.Core.DomainObjects;
 
 namespace TC.Core.Utils
 {
@@ -11,15 +12,17 @@ namespace TC.Core.Utils
             return new string(input.Where(char.IsDigit).ToArray());
         }
 
-        public static bool CondutorMaiorDeIdade(DateTime? dataNascimento)
+        public static bool UsuarioIdadeAtual(DateTime? dataNascimento)
         {
             if (dataNascimento == null) return false;
-            return dataNascimento <= DateTime.Now.AddYears(-18);
+            return dataNascimento <= DateTime.Now.AddYears(0);
         }
-
-        public static bool IsCpfValid(string cpf)
+        
+        public static bool EscolaridadeDiferentePermitida(Escolaridade escolaridade)
         {
-            return DomainObjects.Cpf.Validar(cpf);
+            var esc = (int)escolaridade;
+            if (esc < 1 || esc > 4) return false;
+            return true;
         }
 
         public static bool IsEmailValid(string email)
