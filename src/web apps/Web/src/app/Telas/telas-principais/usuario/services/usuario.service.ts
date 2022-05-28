@@ -17,6 +17,20 @@ export class UsuarioService extends BaseService {
             .pipe(catchError(super.serviceError));
     }
 
+    obterPorId(id: number): Observable<Usuario> {
+        return this.http
+            .get<Usuario>(this.UrlServiceCrud + "usuario/" + id, super.ObterAuthHeaderJson())
+            .pipe(catchError(super.serviceError));
+    }
+
+    cadastrarUsuario(usuario: Usuario): Observable<any> {
+        return this.http.post<any>(`${this.UrlServiceCrud}usuario`,usuario, super.ObterAuthHeaderJson());
+    }
+
+    atualizarUsuario(usuario: Usuario, id: number): Observable<any> {        
+        return this.http.put<any>(`${this.UrlServiceCrud}usuario/${id}`,usuario, super.ObterAuthHeaderJson());
+    }
+
     excluirUsuario(id: number): Observable<any> {        
         return this.http.delete<any>(`${this.UrlServiceCrud}usuario/${id}`, super.ObterAuthHeaderJson());
     }

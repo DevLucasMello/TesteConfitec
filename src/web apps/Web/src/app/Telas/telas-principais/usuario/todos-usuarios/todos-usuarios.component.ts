@@ -4,6 +4,8 @@ import { ListaDados } from 'src/app/Models/lista-dados';
 import { Paginacao } from 'src/app/Models/paginacao';
 import { Usuario } from '../models/usuario';
 import { UsuarioService } from '../services/usuario.service';
+import { DatePipe } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-todos-usuarios',
@@ -24,7 +26,8 @@ export class TodosUsuariosComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService, 
     private router: Router, 
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private toastr: ToastrService) { }
 
   ngOnInit() {
     this.carregarRegistros();
@@ -80,25 +83,24 @@ export class TodosUsuariosComponent implements OnInit {
         this.usuarioSelecionado.escolaridade = x.escolaridade;
         this.usuarioSelecionado.dataNascimento = x.dataNascimento;
         this.usuarioSelecionado.email = x.email;
-        this.usuarioSelecionado.dataNascimento = this.formatarDataNascimento(x.dataNascimento)
+        this.usuarioSelecionado.dataNascimento = this.converterDataNascimento(x.dataNascimento)
   }
 
-  formatarDataNascimento(data: string): string{
-    let dia = parseInt(data.substring(0,2));
-    let mes = parseInt(data.substring(3,5));
-    let ano = parseInt(data.substring(6,10));
-    return dia + "/" + mes + "/" + ano;
+  public converterDataNascimento(data: string): string{
+    var datePipe = new DatePipe('pt-br');
+    return datePipe.transform(data, 'dd/MM/yyyy');
   }
 
   excluirUsuario(){    
     this.usuarioService.excluirUsuario(this.usuarioSelecionado.id)
       .subscribe(response => {
         if (response){
-          this.mdExcluir.hide();          
-          document.location.reload();          
+          this.mdExcluir.hide();
+          setTimeout(() => {document.location.reload();}, 3000);
+          this.toastr.success('Usuário excluído com sucesso!');          
         }
         else{
-          console.log("Falha ao excluir usuario");
+          this.toastr.error('Erro ao excluir usuário');
         }
       })
   }

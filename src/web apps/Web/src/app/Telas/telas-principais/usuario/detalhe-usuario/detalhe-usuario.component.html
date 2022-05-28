@@ -1,3 +1,75 @@
-<p>
-  detalhe-usuario works!
-</p>
+<div class="container main-container">
+  <div class="container">
+    <h4 class="paragrafo">Cadastro de Usuário</h4>
+    <hr class="paragrafo"/>
+    <form novalidate (ngSubmit)="salvarUsuario()" [formGroup]="cadastroUsuarioForm">
+      <div class="form-horizontal">
+
+        <div class="form-group">
+          <label class="col-md-3 col-sm-5 control-label" for="primeiroNome">Nome</label>
+          <div class="col-md-10">
+            <input class="form-control" id="primeiroNome" type="text" placeholder="Nome (requerido)" formControlName="primeiroNome" 
+            [ngClass]="{'is-invalid': displayMessage.primeiroNome}"/>
+            <span class="text-danger" *ngIf="displayMessage.primeiroNome">
+              <p [innerHTML]="displayMessage.primeiroNome"></p>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 col-sm-5 control-label" for="ultimoNome">Sobrenome</label>
+          <div class="col-md-10">
+            <input class="form-control" id="ultimoNome" type="text" placeholder="Sobrenome (requerido)" formControlName="ultimoNome" 
+            [ngClass]="{'is-invalid': displayMessage.ultimoNome}"/>
+            <span class="text-danger" *ngIf="displayMessage.ultimoNome">
+              <p [innerHTML]="displayMessage.ultimoNome"></p>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 col-sm-5 control-label" for="escolaridade">Escolaridade</label>
+          <div class="col-md-10">
+            <input class="form-control" id="escolaridade" type="text" placeholder="Escolaridade (requerido)" formControlName="escolaridade" 
+            [ngClass]="{'is-invalid': displayMessage.escolaridade}"/>
+            <span class="text-danger" *ngIf="displayMessage.escolaridade">
+              <p [innerHTML]="displayMessage.escolaridade"></p>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 col-sm-5 control-label" for="dataNascimento">Data de Nascimento</label>
+          <div class="col-md-10">
+            <input class="form-control" id="dataNascimento" type="text" placeholder="Data de Nascimento (requerido)" formControlName="dataNascimento" 
+            [ngClass]="{'is-invalid': displayMessage.dataNascimento}"/>
+            <span class="text-danger" *ngIf="displayMessage.dataNascimento">
+              <p [innerHTML]="displayMessage.dataNascimento"></p>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 col-sm-5 control-label" for="email">Email</label>
+          <div class="col-md-10">
+            <input class="form-control" id="email" type="text" placeholder="Email (requerido)" formControlName="email" 
+            [ngClass]="{'is-invalid': displayMessage.email}"/>
+            <span class="text-danger" *ngIf="displayMessage.email">
+              <p [innerHTML]="displayMessage.email"></p>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-4 col-md-offset-2">
+            <span>
+              <button class="btn btn-primary" id="Registrar" [disabled]="!cadastroUsuarioForm.valid" 
+              [ngClass]="{'cursorSemBloqueio' : cadastroUsuarioForm.valid, 'cursorBloqueado' : !cadastroUsuarioForm.valid}"type="submit">Salvar Alterações</button>
+              <button class="btn btn-danger botao-voltar" (click)="voltarDashboard()">Voltar</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

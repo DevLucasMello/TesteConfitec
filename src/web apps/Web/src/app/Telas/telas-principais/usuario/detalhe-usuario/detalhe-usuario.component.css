@@ -1,0 +1,22 @@
+.botao-voltar{
+    margin-left: 15px;
+    width: 100px;
+}
+
+.paragrafo{
+    margin-left: 15px;
+}
+
+h4{
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: -40px;
+}
+
+.cursorBloqueado{
+    cursor: not-allowed;
+}
+
+.cursorSemBloqueio{
+    cursor: pointer;
+}

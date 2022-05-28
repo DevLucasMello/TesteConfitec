@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
-import { HttpClient, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { LOCALE_ID, NgModule } from "@angular/core";
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -17,6 +17,7 @@ import { UsuarioGuard } from "./services/usuario.guard";
 import { UsuarioService } from "./services/usuario.service";
 import { TodosUsuariosComponent } from "./todos-usuarios/todos-usuarios.component";
 import { DetalheUsuarioComponent } from "./detalhe-usuario/detalhe-usuario.component";
+import { TextMaskModule } from "angular2-text-mask";
 
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
@@ -40,14 +41,15 @@ export const httpInterceptorProviders = [
     CustomFormsModule,
     AngularDraggableModule,
     ModalModule.forRoot(),
-    AutenticadoModule
+    AutenticadoModule,
+    HttpClientModule,
+    TextMaskModule
   ],
   providers: [
     httpInterceptorProviders, 
     UsuarioGuard, 
     UsuarioService, 
-    HttpClient, 
-    {provide: LOCALE_ID, useValue: 'pt-br'}
+    HttpClient
   ]
 })
 export class UsuarioModule { }

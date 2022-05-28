@@ -23,6 +23,9 @@ import { RodapeLoginComponent } from './Telas/telas-principais/login/rodape-logi
 import { MenuLoginComponent } from './Telas/telas-principais/login/menu-login/menu-login.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AcessoNegadoComponent } from './Telas/telas-apoio/acesso-negado/acesso-negado.component';
+import { registerLocaleData } from '@angular/common';
+import localePT from '@angular/common/locales/pt';
+registerLocaleData(localePT);
 
 @NgModule({
   declarations: [
