@@ -1,64 +1,53 @@
-<!---![Logo of the project](http://logo_link)-->
+# Aplicação Distribuída em APIs
  
-## Aplicação Distribuída em APIs
- 
- <!---
-## Technology 
- 
-Here are the technologies used in this project.
- 
-* Ruby version  x.x.x
-* Rails version x.x.x
-* ...
- 
- 
-## Services Used
- 
-* Github
-* ...
- 
- 
-## Ruby Gems
-...
- 
-## Getting started
- 
-* To install gems:
->    $ bundle install
-* To create the bank and do as migrations:
->    $ rake db:create db:migrate db:seed
-* To run the project:
->    $ rails s
- 
-## How to use
- 
-Here will be the images and descriptions. Principal content.
- 
- 
-## Features
- 
-  - Here will be the features.
- 
- 
-## Links
- 
-  - Link of deployed application: (if has been deployed)
-  - Repository: https://link_of_repository
-    - In case of sensitive bugs like security vulnerabilities, please contact
-      YOUR EMAIL directly instead of using issue tracker. We value your effort
-      to improve the security and privacy of this project!
- 
- 
-## Versioning
- 
-1.0.0.0
- 
- 
-## Authors
- 
-* **YOUR NAME**: @YOUR_GITHUB_NICKNAME (https://github.com/YOUR_GITHUB_NICKNAME)
- 
- 
-Please follow github and join us!
-Thanks to visiting me and good coding!
--->
+## Tecnologias / Compoentes implementados
+
+    - .Net 5;
+    - WebApi;
+    - SOLID;
+    - Clean Code;
+    - Design Patterns;
+    - DDD;
+    - Arquitetura Hexagonal;
+    - SqlServer;
+    - EntityFrameworkCore 5;
+    - Dapper;
+    - Automapper;
+    - Identity;
+    - JWT;
+    - Angular 11;
+    - Docker;
+    - Testes de Unidade;
+    - Testes de Integração;
+    - Bogus;
+    - Moq;
+    - Automocker;
+    - FluentValidator
+    - MediatR
+    - Swagger UI with JWT support
+
+## Recursos para rodar a aplicação
+
+   - Docker instalado com conta ativa
+   - Interface gráfica SqlServer
+
+
+## Instruções de uso
+
+   1° - Baixar projeto do GitHub
+   2° - Criar uma pasta com nome "dev" no diretório C:
+   3° - Extrair o projeto baixado na pasta "dev"
+   4° - No cmd do windows digitar o seguinte comando para navegar até o diretório " "
+   5° - Ainda no cmd, digitar o comando para criar imagem e rodar os containeres docker " "
+   6° - Abrir interface gráfica do SqlServer e verificar se os bancos de dados " " foram criados
+
+### Passos abaixo apenas se os bancos mencionados acima não foram criados ---
+
+   7° - No cmd apertar crtl + c para parar os containeres
+   8° - Rodar o comando " " novamente no cmd do windows
+   9° - Checar se os bancos " " foram criados através da interface gráfica do SqlServer
+   10° - Caso os bancos não tenham sidos criados, repetir desde o passo 7° novamente
+
+### Fim passos checagem criação dos bancos de dados
+
+   11° - Abrir o navegador de sua preferência e digitar a url " " para carregar a aplicação.
