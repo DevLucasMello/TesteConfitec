@@ -52,8 +52,9 @@ export class DetalheUsuarioComponent implements OnInit, AfterViewInit {
         },
         dataNascimento: {
           required: 'A data de nascimento é requerida',
-          minlength: 'A data de nascimento precisa ter no mínimo 6 caracteres',
-          maxlength: 'A data de nascimento precisa ter no máximo 150 caracteres'
+          date: 'Data de nascimento em formato inválido',
+          minlength: 'Data de nascimento em formato inválido',
+          maxlength: 'Data de nascimento em formato inválido'
         },
         email: {
           required: 'O email é requerido',
@@ -77,7 +78,7 @@ export class DetalheUsuarioComponent implements OnInit, AfterViewInit {
       primeiroNome: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
       ultimoNome: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
       escolaridade: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(150)]],
-      dataNascimento: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(150)]],
+      dataNascimento: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(150)]]      
     });
   }
@@ -153,7 +154,7 @@ export class DetalheUsuarioComponent implements OnInit, AfterViewInit {
 
   public converterDataNascimento(data: string): string{
     var datePipe = new DatePipe('pt-br');
-    return datePipe.transform(data, 'dd/MM/yyyy');
+    return datePipe.transform(data, 'MM/dd/yyyy');
   }
 
   formatarDataNascimento(data: string): string{
