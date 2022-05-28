@@ -5,6 +5,7 @@ import { NotFoundComponent } from '../../telas-apoio/not-found/not-found.compone
 import { UsuarioComponent } from './usuario.component';
 import { TodosUsuariosComponent } from './todos-usuarios/todos-usuarios.component';
 import { UsuarioGuard } from './services/usuario.guard';
+import { DetalheUsuarioComponent } from './detalhe-usuario/detalhe-usuario.component';
 
 const usuarioRouterConfig: Routes = [
   {
@@ -14,6 +15,10 @@ const usuarioRouterConfig: Routes = [
       { path: '', component: TodosUsuariosComponent, canActivate: [UsuarioGuard] },
 
       { path: 'usuario', component: TodosUsuariosComponent, canActivate: [UsuarioGuard] },
+
+      { path: 'editar/:id', component: DetalheUsuarioComponent, canActivate: [UsuarioGuard] },
+
+      { path: 'cadastrar', component: DetalheUsuarioComponent, canActivate: [UsuarioGuard] },
 
       { path: 'acesso-negado', component: AcessoNegadoComponent },
       

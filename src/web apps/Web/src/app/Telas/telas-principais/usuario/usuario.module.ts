@@ -16,6 +16,7 @@ import { UsuarioRoutingModule } from "./usuario.route";
 import { UsuarioGuard } from "./services/usuario.guard";
 import { UsuarioService } from "./services/usuario.service";
 import { TodosUsuariosComponent } from "./todos-usuarios/todos-usuarios.component";
+import { DetalheUsuarioComponent } from "./detalhe-usuario/detalhe-usuario.component";
 
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
@@ -24,7 +25,8 @@ export const httpInterceptorProviders = [
 @NgModule({
   declarations: [
     UsuarioComponent,
-    TodosUsuariosComponent    
+    TodosUsuariosComponent,
+    DetalheUsuarioComponent    
   ],
   imports: [
     CommonModule, 

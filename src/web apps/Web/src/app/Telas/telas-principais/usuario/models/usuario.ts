@@ -1,6 +1,6 @@
 export class Usuario
 {
-    public id: string;
+    public id: number;
     public primeiroNome: string;
     public ultimoNome: string;    
     public email: string;    

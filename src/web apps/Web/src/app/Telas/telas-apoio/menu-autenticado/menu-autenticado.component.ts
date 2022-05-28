@@ -18,7 +18,7 @@ export class MenuAutenticadoComponent implements OnInit {
     {
       link: '/usuario',
       name: 'Usuarios',
-      exact: true,
+      exact: false,
       home: false
     }
   ];

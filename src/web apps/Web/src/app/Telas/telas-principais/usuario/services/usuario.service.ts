@@ -11,9 +11,13 @@ export class UsuarioService extends BaseService {
 
     constructor(private http: HttpClient) { super() }
     
-    obterTodosUsuarios(page: number, take: number): Observable<ListaDados<Usuario[]>> {        
+    obterTodosUsuarios(page: number, take: number, query: string): Observable<ListaDados<Usuario>> {        
         return this.http
-            .get<ListaDados<Usuario[]>>(`${this.UrlServiceCrud}usuario?ps=${take}&page=${page}`, super.ObterAuthHeaderJson())
+            .get<ListaDados<Usuario>>(`${this.UrlServiceCrud}usuario?ps=${take}&page=${page}&q=${query}`, super.ObterAuthHeaderJson())
             .pipe(catchError(super.serviceError));
+    }
+
+    excluirUsuario(id: number): Observable<any> {        
+        return this.http.delete<any>(`${this.UrlServiceCrud}usuario/${id}`, super.ObterAuthHeaderJson());
     }
 }
