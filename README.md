@@ -8,6 +8,7 @@
     - Clean Code;
     - Design Patterns;
     - DDD;
+    - CQRS;
     - Arquitetura Hexagonal;
     - SqlServer;
     - EntityFrameworkCore 5;
