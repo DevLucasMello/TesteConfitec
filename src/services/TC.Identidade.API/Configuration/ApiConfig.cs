@@ -16,11 +16,22 @@ namespace TC.Identidade.API.Configuration
             {
                 options.AddPolicy("Development",
                     builder =>
-                        builder
+                        builder                        
                         .AllowAnyOrigin()
                         .AllowAnyMethod()
                         .AllowAnyHeader());
                 
+            });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Docker",
+                    builder =>
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+
             });
 
             return services;
@@ -35,7 +46,8 @@ namespace TC.Identidade.API.Configuration
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // Apenas para testes com Docker
+            app.UseCors("Docker");
 
             app.UseRouting();
 

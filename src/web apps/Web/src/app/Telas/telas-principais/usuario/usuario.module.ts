@@ -18,6 +18,7 @@ import { UsuarioService } from "./services/usuario.service";
 import { TodosUsuariosComponent } from "./todos-usuarios/todos-usuarios.component";
 import { DetalheUsuarioComponent } from "./detalhe-usuario/detalhe-usuario.component";
 import { TextMaskModule } from "angular2-text-mask";
+import { BaseService } from "src/app/services/base.service";
 
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
@@ -27,7 +28,7 @@ export const httpInterceptorProviders = [
   declarations: [
     UsuarioComponent,
     TodosUsuariosComponent,
-    DetalheUsuarioComponent    
+    DetalheUsuarioComponent
   ],
   imports: [
     CommonModule, 
@@ -49,7 +50,8 @@ export const httpInterceptorProviders = [
     httpInterceptorProviders, 
     UsuarioGuard, 
     UsuarioService, 
-    HttpClient
+    HttpClient,
+    BaseService
   ]
 })
 export class UsuarioModule { }

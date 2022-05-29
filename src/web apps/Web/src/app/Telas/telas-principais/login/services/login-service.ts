@@ -4,17 +4,30 @@ import { Observable } from "rxjs";
 import { BaseService } from 'src/app/services/base.service';
 import { UsuarioRespostaLogin } from "../models/login-resposta";
 import { UsuarioLogin, UsuarioRegistro } from "../models/login-envio";
+import { catchError, map } from "rxjs/operators";
 
 @Injectable()
-export class LoginService extends BaseService {
+export class LoginService {
 
-    constructor(private http: HttpClient) { super() }
+    constructor(private http: HttpClient, private base: BaseService) { }
     
     login(usuario: UsuarioLogin): Observable<UsuarioRespostaLogin> {
-        return this.http.post<UsuarioRespostaLogin>(`${this.UrlServiceCrud}autenticar`,usuario, super.ObterHeaderJson());
+        let response = this.http
+            .post(`${this.base.UrlServiceCrud}autenticar`,usuario, this.base.ObterHeaderJson())
+            .pipe(
+                map(this.base.extractData),
+                catchError(this.base.serviceError));
+
+        return response;        
     }
 
     registro(usuario: UsuarioRegistro): Observable<UsuarioRespostaLogin> {
-        return this.http.post<UsuarioRespostaLogin>(`${this.UrlServiceCrud}nova-conta`,usuario, super.ObterHeaderJson());
+        let response = this.http
+            .post(`${this.base.UrlServiceCrud}nova-conta`,usuario, this.base.ObterHeaderJson())
+            .pipe(
+                map(this.base.extractData),
+                catchError(this.base.serviceError));
+
+        return response;
     }    
 }

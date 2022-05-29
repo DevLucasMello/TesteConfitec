@@ -42,6 +42,12 @@ h4{
     }
 }
 
-@media (max-width: 320px){
+@media (max-width: 1500px) and (min-width: 330px){
+    .meio-tela-sem-erro{
+        margin-top: 12%;
+    }
     
+    .meio-tela-com-erro{
+        margin-top: 5%;
+    }    
 }

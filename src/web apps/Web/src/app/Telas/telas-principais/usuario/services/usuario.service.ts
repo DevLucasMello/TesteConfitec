@@ -4,34 +4,34 @@ import { Observable } from "rxjs";
 import { BaseService } from 'src/app/services/base.service';
 import { catchError } from "rxjs/operators";
 import { Usuario } from "../models/usuario";
-import { ListaDados } from "src/app/Models/lista-dados";
+import { ListaDados } from "src/app/models/lista-dados";
 
 @Injectable()
-export class UsuarioService extends BaseService {
+export class UsuarioService {
 
-    constructor(private http: HttpClient) { super() }
+    constructor(private http: HttpClient, private base: BaseService) {  }
     
     obterTodosUsuarios(page: number, take: number, query: string): Observable<ListaDados<Usuario>> {        
         return this.http
-            .get<ListaDados<Usuario>>(`${this.UrlServiceCrud}usuario?ps=${take}&page=${page}&q=${query}`, super.ObterAuthHeaderJson())
-            .pipe(catchError(super.serviceError));
+            .get<ListaDados<Usuario>>(`${this.base.UrlServiceCrud}usuario?ps=${take}&page=${page}&q=${query}`, this.base.ObterAuthHeaderJson())
+            .pipe(catchError(this.base.serviceError));
     }
 
     obterPorId(id: number): Observable<Usuario> {
         return this.http
-            .get<Usuario>(this.UrlServiceCrud + "usuario/" + id, super.ObterAuthHeaderJson())
-            .pipe(catchError(super.serviceError));
+            .get<Usuario>(this.base.UrlServiceCrud + "usuario/" + id, this.base.ObterAuthHeaderJson())
+            .pipe(catchError(this.base.serviceError));
     }
 
     cadastrarUsuario(usuario: Usuario): Observable<any> {
-        return this.http.post<any>(`${this.UrlServiceCrud}usuario`,usuario, super.ObterAuthHeaderJson());
+        return this.http.post<any>(`${this.base.UrlServiceCrud}usuario`,usuario, this.base.ObterAuthHeaderJson());
     }
 
     atualizarUsuario(usuario: Usuario, id: number): Observable<any> {        
-        return this.http.put<any>(`${this.UrlServiceCrud}usuario/${id}`,usuario, super.ObterAuthHeaderJson());
+        return this.http.put<any>(`${this.base.UrlServiceCrud}usuario/${id}`,usuario, this.base.ObterAuthHeaderJson());
     }
 
     excluirUsuario(id: number): Observable<any> {        
-        return this.http.delete<any>(`${this.UrlServiceCrud}usuario/${id}`, super.ObterAuthHeaderJson());
+        return this.http.delete<any>(`${this.base.UrlServiceCrud}usuario/${id}`, this.base.ObterAuthHeaderJson());
     }
 }

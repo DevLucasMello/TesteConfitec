@@ -38,10 +38,16 @@
         <app-paginacao [paginacao]="paginacao" (paginacaoEmitter)="carregarRegistros($event)"></app-paginacao>
       </div> 
     </div>
-    
+
+    <div *ngIf="dados === undefined" class="filtro">
+      <div class="col-12 linha-botao-cadastrar">        
+        <button class="btn btn-success botao-cadastrar" (click)="cadastrarUsuario()">Cadastrar Usuário</button>
+      </div>      
+    </div>    
     <div *ngIf="dados === undefined" class="row conteudo" style="margin-top: 25vh;">
       <div class="col-6 sem-conteudo"><span>Não possui usuários cadastrados</span></div>          
     </div>
+
   </div>  
 </div>
 

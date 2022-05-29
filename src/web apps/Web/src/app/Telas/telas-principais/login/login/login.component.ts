@@ -3,7 +3,7 @@ import { FormBuilder, FormControlName, FormGroup, Validators } from '@angular/fo
 import { fromEvent, merge, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomValidators } from 'ng2-validation';
-import { LoginService } from 'src/app/Telas/telas-principais/login/services/login-service';
+import { LoginService } from 'src/app/telas/telas-principais/login/services/login-service';
 import { LocalStorageUtils } from 'src/app/Validacoes/localStorage';
 import { UsuarioLogin } from '../models/login-envio';
 import { UsuarioRespostaLogin } from '../models/login-resposta';

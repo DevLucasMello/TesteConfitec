@@ -30,8 +30,15 @@
         <div class="form-group">
           <label class="col-md-3 col-sm-5 control-label" for="escolaridade">Escolaridade</label>
           <div class="col-md-10">
-            <input class="form-control" id="escolaridade" type="text" placeholder="Escolaridade (requerido)" formControlName="escolaridade" 
-            [ngClass]="{'is-invalid': displayMessage.escolaridade}"/>
+            <!-- <input class="form-control" id="escolaridade" type="text" placeholder="Escolaridade (requerido)" formControlName="escolaridade" 
+            [ngClass]="{'is-invalid': displayMessage.escolaridade}"/> -->
+            <select class="form-control" formControlName="escolaridade">
+              <option value="">Selecione: </option>
+              <option value="Infantil">Infantil</option>
+              <option value="Fundamental">Fundamental</option>
+              <option value="Médio">Médio</option>
+              <option value="Superior">Superior</option>
+            </select>
             <span class="text-danger" *ngIf="displayMessage.escolaridade">
               <p [innerHTML]="displayMessage.escolaridade"></p>
             </span>
