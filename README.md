@@ -37,9 +37,9 @@
 
    - 1° - Baixar projeto do GitHub
    - 2° - Criar uma pasta com nome "dev" no diretório C:
-   - 3° - Extrair o projeto baixado na pasta "dev"
+   - 3° - Extrair o projeto baixado para pasta "dev"
    - 4° - No cmd do windows digitar o seguinte comando para navegar até o diretório "cd c:/dev/TesteConfitec/docker"
-   - 5° - Ainda no cmd, digitar o comando para criar imagem e rodar os containeres docker "docker-compose -f tc_producao.yml up --build"
+   - 5° - Ainda no cmd, digitar o comando para criar imagem e rodar os containers docker "docker-compose -f tc_producao.yml up --build"
    - 6° - Abrir interface gráfica do SqlServer e verificar se os bancos de dados "TesteIdentidadeConfitec" "TesteUsuarioConfitec" foram criados
 
 ### Passo 7º apenas se os bancos mencionados acima não foram criados
