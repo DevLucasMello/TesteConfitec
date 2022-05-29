@@ -3,12 +3,12 @@ import { FormBuilder, FormControlName, FormGroup, Validators } from '@angular/fo
 import { fromEvent, merge, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomValidators } from 'ng2-validation';
-import { LoginService } from 'src/app/telas/telas-principais/login/services/login-service';
-import { LocalStorageUtils } from 'src/app/Validacoes/localStorage';
 import { UsuarioLogin } from '../models/login-envio';
 import { UsuarioRespostaLogin } from '../models/login-resposta';
-import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/Validacoes/generic-form-validator';
 import { ToastrService } from 'ngx-toastr';
+import { LocalStorageUtils } from 'src/app/utilidades/localStorage';
+import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/utilidades/generic-form-validator';
+import { LoginService } from '../services/login-service';
 
 @Component({
   selector: 'app-login',

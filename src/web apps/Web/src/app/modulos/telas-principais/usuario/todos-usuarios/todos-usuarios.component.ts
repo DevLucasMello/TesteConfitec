@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ListaDados } from 'src/app/models/lista-dados';
-import { Paginacao } from 'src/app/models/paginacao';
 import { Usuario } from '../models/usuario';
 import { UsuarioService } from '../services/usuario.service';
 import { DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { Paginacao } from 'src/app/modelos/paginacao';
+import { ListaDados } from 'src/app/modelos/lista-dados';
 
 @Component({
   selector: 'app-todos-usuarios',

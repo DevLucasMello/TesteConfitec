@@ -12,20 +12,20 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { CustomFormsModule } from 'ng2-validation';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './telas/telas-principais/login/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { LoginService } from './telas/telas-principais/login/services/login-service';
-import { NotFoundComponent } from './telas/telas-apoio/not-found/not-found.component';
-import { RegistroComponent } from './telas/telas-principais/login/registro/registro.component';
 import { ToastrModule } from 'ngx-toastr';
-import { RodapeLoginComponent } from './telas/telas-principais/login/rodape-login/rodape-login.component';
-import { MenuLoginComponent } from './telas/telas-principais/login/menu-login/menu-login.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-import { AcessoNegadoComponent } from './telas/telas-apoio/acesso-negado/acesso-negado.component';
 import { registerLocaleData } from '@angular/common';
 import localePT from '@angular/common/locales/pt';
-import { BaseService } from './services/base.service';
+import { LoginComponent } from './modulos/telas-principais/login/login/login.component';
+import { RegistroComponent } from './modulos/telas-principais/login/registro/registro.component';
+import { NotFoundComponent } from './modulos/telas-apoio/not-found/not-found.component';
+import { MenuLoginComponent } from './modulos/telas-principais/login/menu-login/menu-login.component';
+import { RodapeLoginComponent } from './modulos/telas-principais/login/rodape-login/rodape-login.component';
+import { AcessoNegadoComponent } from './modulos/telas-apoio/acesso-negado/acesso-negado.component';
+import { LoginService } from './modulos/telas-principais/login/services/login-service';
+import { BaseService } from './servicos/base.service';
 registerLocaleData(localePT);
 
 @NgModule({

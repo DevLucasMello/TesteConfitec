@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LocalStorageUtils } from 'src/app/Validacoes/localStorage';
+import { LocalStorageUtils } from 'src/app/utilidades/localStorage';
 import { Nav } from './nav';
 
 @Component({

@@ -1,12 +1,12 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChildren } from '@angular/core';
 import { FormBuilder, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/Validacoes/generic-form-validator';
 import { UsuarioService } from '../services/usuario.service';
 import { fromEvent, merge, Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
 import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
+import { DisplayMessage, GenericValidator, ValidationMessages } from 'src/app/utilidades/generic-form-validator';
 
 @Component({
   selector: 'app-detalhe-usuario',

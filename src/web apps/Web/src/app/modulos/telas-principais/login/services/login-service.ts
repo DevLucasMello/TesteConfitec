@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { BaseService } from 'src/app/services/base.service';
 import { UsuarioRespostaLogin } from "../models/login-resposta";
 import { UsuarioLogin, UsuarioRegistro } from "../models/login-envio";
 import { catchError, map } from "rxjs/operators";
+import { BaseService } from "src/app/servicos/base.service";
 
 @Injectable()
 export class LoginService {

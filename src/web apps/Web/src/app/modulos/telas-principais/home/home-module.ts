@@ -14,9 +14,9 @@ import { AngularDraggableModule } from 'angular2-draggable';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { HomeComponent } from './home/home.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ErrorInterceptor } from 'src/app/Validacoes/error.handler.service';
 import { HomeGuard } from './services/home.guard';
 import { AutenticadoModule } from '../../telas-apoio/autenticado-module';
+import { ErrorInterceptor } from 'src/app/utilidades/error.handler.service';
 
 export const httpInterceptorProviders = [
   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

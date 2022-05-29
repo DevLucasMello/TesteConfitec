@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { BaseService } from 'src/app/services/base.service';
 import { catchError } from "rxjs/operators";
 import { Usuario } from "../models/usuario";
-import { ListaDados } from "src/app/models/lista-dados";
+import { BaseService } from "src/app/servicos/base.service";
+import { ListaDados } from "src/app/modelos/lista-dados";
 
 @Injectable()
 export class UsuarioService {
