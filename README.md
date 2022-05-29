@@ -42,7 +42,7 @@
    - 5° - Ainda no cmd, digitar o comando para criar imagem e rodar os containeres docker "docker-compose -f tc_producao.yml up --build"
    - 6° - Abrir interface gráfica do SqlServer e verificar se os bancos de dados "TesteIdentidadeConfitec" "TesteUsuarioConfitec" foram criados
 
-### Passo abaixo apenas se os bancos mencionados acima não foram criados
+### Passo 7º apenas se os bancos mencionados acima não foram criados
    - 7° - Abra a interface do docker e clique em restart no container "tc-sql-server"
 
    - 8° - Abrir o navegador de sua preferência e digite a url "localhost:8080" para carregar a aplicação.
